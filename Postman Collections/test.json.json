@@ -36,7 +36,7 @@
               }
             }
           ],
-          "_postman_id": "269802a0-dd0e-4886-b816-fe0fe31f8e92",
+          "id": "269802a0-dd0e-4886-b816-fe0fe31f8e92",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -48,7 +48,7 @@
           "response": []
         }
       ],
-      "_postman_id": "84f67881-9b2c-4072-a74e-5a40164950d4"
+      "id": "84f67881-9b2c-4072-a74e-5a40164950d4"
     },
     {
       "name": "Get all Bookings",
@@ -67,7 +67,7 @@
               }
             }
           ],
-          "_postman_id": "d3a2cc26-a054-4205-a93d-ed4299d3ab4b",
+          "id": "d3a2cc26-a054-4205-a93d-ed4299d3ab4b",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -92,7 +92,7 @@
               }
             }
           ],
-          "_postman_id": "eacf12af-2667-4a0a-947f-e88d1c36f39d",
+          "id": "eacf12af-2667-4a0a-947f-e88d1c36f39d",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -100,7 +100,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseURL}}/booking?firstname=qa&lastname=brown&checkin=2017-11-11&checkout=2017-11-15",
+              "raw": "{{baseURL}}/booking?firstname=qa&lastname=qa&checkin=2017-11-11&checkout=2017-11-15",
               "host": [
                 "{{baseURL}}"
               ],
@@ -114,7 +114,7 @@
                 },
                 {
                   "key": "lastname",
-                  "value": "brown"
+                  "value": "qa"
                 },
                 {
                   "key": "checkin",
@@ -143,7 +143,7 @@
               }
             }
           ],
-          "_postman_id": "24e897df-f351-4f6e-9900-c58b19c4c5b6",
+          "id": "24e897df-f351-4f6e-9900-c58b19c4c5b6",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -187,7 +187,7 @@
               }
             }
           ],
-          "_postman_id": "22a18b67-c151-4c67-a4a2-cb01ef358822",
+          "id": "22a18b67-c151-4c67-a4a2-cb01ef358822",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -226,7 +226,7 @@
               }
             }
           ],
-          "_postman_id": "20129dd0-6ff7-430d-a330-518339562871",
+          "id": "20129dd0-6ff7-430d-a330-518339562871",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -265,7 +265,7 @@
               }
             }
           ],
-          "_postman_id": "537b7199-a4fd-4f5b-9d6f-06784d2c9395",
+          "id": "537b7199-a4fd-4f5b-9d6f-06784d2c9395",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -304,7 +304,7 @@
               }
             }
           ],
-          "_postman_id": "092bca49-8982-4394-94e5-977ef037732c",
+          "id": "092bca49-8982-4394-94e5-977ef037732c",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -330,7 +330,7 @@
           "response": []
         }
       ],
-      "_postman_id": "ddbe2490-b887-42c3-8727-6f63308bf2bc"
+      "id": "ddbe2490-b887-42c3-8727-6f63308bf2bc"
     },
     {
       "name": "Get a single booking",
@@ -351,7 +351,7 @@
               }
             }
           ],
-          "_postman_id": "67d230bb-791f-4def-b689-771fac2e196f",
+          "id": "67d230bb-791f-4def-b689-771fac2e196f",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -381,7 +381,7 @@
               }
             }
           ],
-          "_postman_id": "ed1aa0bc-5cb9-40a9-918c-abc34475ebff",
+          "id": "ed1aa0bc-5cb9-40a9-918c-abc34475ebff",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -425,7 +425,7 @@
               }
             }
           ],
-          "_postman_id": "36d0735e-72bb-47eb-99d3-97bd5ad19157",
+          "id": "36d0735e-72bb-47eb-99d3-97bd5ad19157",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -437,7 +437,7 @@
           "response": []
         }
       ],
-      "_postman_id": "0ef3814c-e48c-40e0-9723-c1026549317e",
+      "id": "0ef3814c-e48c-40e0-9723-c1026549317e",
       "event": [
         {
           "listen": "prerequest",
@@ -509,7 +509,7 @@
               }
             }
           ],
-          "_postman_id": "512f99fb-9d31-4754-8575-69abe82d52b1",
+          "id": "512f99fb-9d31-4754-8575-69abe82d52b1",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -523,8 +523,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"firstname\" : \"Sally\",\r\n\t\"lastname\" : \"Brown\",\r\n\t\"totalprice\" : 111,\r\n\t\"depositpaid\" : true,\r\n\t\"additionalneeds\" : \"Breakfast\",\r\n\t\"bookingdates\" : {\r\n\t\t\"checkin\" : \"2013-02-23\",\r\n\t\t\"checkout\" : \"2014-10-23\"\r\n\t}\r\n}",
-              "options": {}
+              "raw": "{\r\n  \"firstname\" : \"Sally\",\r\n\t\"lastname\" : \"Brown\",\r\n\t\"totalprice\" : 111,\r\n\t\"depositpaid\" : true,\r\n\t\"additionalneeds\" : \"Breakfast\",\r\n\t\"bookingdates\" : {\r\n\t\t\"checkin\" : \"2013-02-23\",\r\n\t\t\"checkout\" : \"2014-10-23\"\r\n\t}\r\n}"
             },
             "url": "{{baseURL}}/booking"
           },
@@ -555,7 +554,7 @@
               }
             }
           ],
-          "_postman_id": "ae2947bb-04c7-4525-aad3-60314d47941b",
+          "id": "ae2947bb-04c7-4525-aad3-60314d47941b",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -573,8 +572,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "<booking>\r\n    <firstname>Sally</firstname>\r\n    <lastname>Brown</lastname>\r\n    <totalprice>111</totalprice>\r\n    <depositpaid>true</depositpaid>\r\n    <additionalneeds>Breakfast</additionalneeds>\r\n    <bookingdates>\r\n        <checkin>2013/02/23</checkin>\r\n        <checkout>2014/10/23</checkout>\r\n    </bookingdates>\r\n</booking>",
-              "options": {}
+              "raw": "<booking>\r\n    <firstname>Sally</firstname>\r\n    <lastname>Brown</lastname>\r\n    <totalprice>111</totalprice>\r\n    <depositpaid>true</depositpaid>\r\n    <additionalneeds>Breakfast</additionalneeds>\r\n    <bookingdates>\r\n        <checkin>2013/02/23</checkin>\r\n        <checkout>2014/10/23</checkout>\r\n    </bookingdates>\r\n</booking>"
             },
             "url": "{{baseURL}}/booking"
           },
@@ -630,7 +628,7 @@
               }
             }
           ],
-          "_postman_id": "a5814b11-289a-4054-8cc1-a265085a0914",
+          "id": "a5814b11-289a-4054-8cc1-a265085a0914",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -644,8 +642,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n\t\"firstname\" : {{first_name}},\r\n\t\"lastname\" : {{last_name}},\r\n\t\"totalprice\" : {{total_price}},\r\n\t\"depositpaid\" : {{depositPaid}},\r\n\t\"additionalneeds\" : {{additional_needs}},\r\n\t\"bookingdates\" : {\r\n\t\t\"checkin\" : {{check_in}},\r\n\t\t\"checkout\" : {{check_out}}\r\n\t}\r\n}",
-              "options": {}
+              "raw": "{\r\n\t\"firstname\" : {{first_name}},\r\n\t\"lastname\" : {{last_name}},\r\n\t\"totalprice\" : {{total_price}},\r\n\t\"depositpaid\" : {{depositPaid}},\r\n\t\"additionalneeds\" : {{additional_needs}},\r\n\t\"bookingdates\" : {\r\n\t\t\"checkin\" : {{check_in}},\r\n\t\t\"checkout\" : {{check_out}}\r\n\t}\r\n}"
             },
             "url": "{{baseURL}}/booking"
           },
@@ -701,7 +698,7 @@
               }
             }
           ],
-          "_postman_id": "9ee374e4-002b-4e07-9652-1f3bce7e92e6",
+          "id": "9ee374e4-002b-4e07-9652-1f3bce7e92e6",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -719,15 +716,14 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "<booking>\r\n    <firstname>{{first_name}}</firstname>\r\n    <lastname>{{last_name}}</lastname>\r\n    <totalprice>{{total_price}}</totalprice>\r\n    <depositpaid>{{depositPaid}}</depositpaid>\r\n    <additionalneeds>{{additional_needs}}</additionalneeds>\r\n    <bookingdates>\r\n        <checkin>{{check_in}}</checkin>\r\n        <checkout>{{check_out}}</checkout>\r\n    </bookingdates>\r\n</booking>",
-              "options": {}
+              "raw": "<booking>\r\n    <firstname>{{first_name}}</firstname>\r\n    <lastname>{{last_name}}</lastname>\r\n    <totalprice>{{total_price}}</totalprice>\r\n    <depositpaid>{{depositPaid}}</depositpaid>\r\n    <additionalneeds>{{additional_needs}}</additionalneeds>\r\n    <bookingdates>\r\n        <checkin>{{check_in}}</checkin>\r\n        <checkout>{{check_out}}</checkout>\r\n    </bookingdates>\r\n</booking>"
             },
             "url": "{{baseURL}}/booking"
           },
           "response": []
         }
       ],
-      "_postman_id": "0b4e7795-88eb-4fde-9b45-221e13a8df27"
+      "id": "0b4e7795-88eb-4fde-9b45-221e13a8df27"
     }
   ],
   "event": [
