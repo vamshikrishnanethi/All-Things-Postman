@@ -1,0 +1,755 @@
+{
+  "info": {
+    "_postman_id": "1a1f6f27-3c5f-4f4a-9e91-7c3d0b668dc7",
+    "name": "Restful_Booker_Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Ping the API",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "00f9c0b1-d4b6-4fdc-8e9e-b44d6aeb4861",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", () => pm.response.to.have.status(201))",
+                  "",
+                  "pm.test('Content-Type header is correct', () => pm.response.to.have.header('Content-Type', 'text/plain; charset=utf-8'))"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "dde3df01-50d3-44e7-a392-187d8f6f3260",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_id": "269802a0-dd0e-4886-b816-fe0fe31f8e92",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseURL}}/ping"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "84f67881-9b2c-4072-a74e-5a40164950d4"
+    },
+    {
+      "name": "Get all Bookings",
+      "item": [
+        {
+          "name": "Get all bookings",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ed803792-e5d5-4378-8bfd-3228c5558bae",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ]
+              }
+            }
+          ],
+          "_postman_id": "d3a2cc26-a054-4205-a93d-ed4299d3ab4b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseURL}}/booking"
+          },
+          "response": []
+        },
+        {
+          "name": "Get all bookings with all parameters",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "feff2b3d-55cb-4690-884d-dac7e80f0627",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "eacf12af-2667-4a0a-947f-e88d1c36f39d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/booking?firstname=qa&lastname=brown&checkin=2017-11-11&checkout=2017-11-15",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "firstname",
+                  "value": "qa"
+                },
+                {
+                  "key": "lastname",
+                  "value": "brown"
+                },
+                {
+                  "key": "checkin",
+                  "value": "2017-11-11"
+                },
+                {
+                  "key": "checkout",
+                  "value": "2017-11-15"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all bookings with the firstname and last name parameter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ],
+                "id": "94c6a96f-4ea2-48f0-86ba-49c6e60a06dd"
+              }
+            }
+          ],
+          "_postman_id": "24e897df-f351-4f6e-9900-c58b19c4c5b6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/booking?firstname=sally&lastname=brown",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "firstname",
+                  "value": "sally"
+                },
+                {
+                  "key": "lastname",
+                  "value": "brown"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all bookings with the firstname  parameter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "51faf2d5-af85-49aa-a436-5eea4a8a391b",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_id": "22a18b67-c151-4c67-a4a2-cb01ef358822",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/booking?firstname=sally",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "firstname",
+                  "value": "sally"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all bookings with the lastname parameter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ],
+                "id": "be20621f-cc53-4082-a166-7a198372a9f6"
+              }
+            }
+          ],
+          "_postman_id": "20129dd0-6ff7-430d-a330-518339562871",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/booking?lastname=brown",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "lastname",
+                  "value": "brown"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all bookings with the checkin parameter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ],
+                "id": "446e2c73-ea07-41cb-b1da-b9ae7b2397ae"
+              }
+            }
+          ],
+          "_postman_id": "537b7199-a4fd-4f5b-9d6f-06784d2c9395",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/booking?checkin=2017-11-11",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "checkin",
+                  "value": "2017-11-11"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all bookings with the checkout parameter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ],
+                "id": "dc9d6a0e-2673-40ca-9014-755b15262439"
+              }
+            }
+          ],
+          "_postman_id": "092bca49-8982-4394-94e5-977ef037732c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/booking?checkout=2017-11-11",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "checkout",
+                  "value": "2017-11-11"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "ddbe2490-b887-42c3-8727-6f63308bf2bc"
+    },
+    {
+      "name": "Get a single booking",
+      "item": [
+        {
+          "name": "Get a single booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  "",
+                  "pm.test('Content-Type header is correct', () => pm.response.to.have.header('Content-Type', 'application/json; charset=utf-8'))"
+                ],
+                "id": "72c14996-5547-428d-9dcc-80547c82642e"
+              }
+            }
+          ],
+          "_postman_id": "67d230bb-791f-4def-b689-771fac2e196f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseURL}}/booking/1"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a single booking with XML header set",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))"
+                ],
+                "id": "c97bd052-92b4-4435-b07f-23aed31a3dc1"
+              }
+            }
+          ],
+          "_postman_id": "ed1aa0bc-5cb9-40a9-918c-abc34475ebff",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "url": "{{baseURL}}/booking/1"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a single booking dynamically",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "631ec7a1-cf15-41ea-9de4-32908a11998c",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.environment.set(\"booking_id\", _.random(1,10))"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "87f881e3-1dc8-4673-bfb2-46e0a8cfdaf0",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  "    ",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_id": "36d0735e-72bb-47eb-99d3-97bd5ad19157",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseURL}}/booking/{{booking_id}}"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "0ef3814c-e48c-40e0-9723-c1026549317e",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "1ea1c9dc-3dcb-4aec-8227-b226102ada86",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "040133e8-2422-419d-bbcd-efab92377950",
+            "type": "text/javascript",
+            "exec": [
+              "if(pm.response.to.have.header('Content-Type') === 'application/json; charset=utf-8') {",
+              "    pm.test(\"Response data format is correct\", () => {",
+              "    var jsonData = pm.response.json()",
+              "    pm.expect(jsonData.firstname).to.be.a('string')",
+              "    pm.expect(jsonData.lastname).to.be.a('string')",
+              "    pm.expect(jsonData.totalprice).to.a('number')",
+              "    pm.expect(jsonData.depositpaid).to.be.a('boolean')",
+              "    pm.expect(jsonData.bookingdates.checkin).to.be.a('string')",
+              "    pm.expect(jsonData.bookingdates.checkin).to.match(/^\\d{4}-\\d{2}-\\d{2}$/)",
+              "    pm.expect(jsonData.bookingdates.checkout).to.be.a('string')",
+              "    pm.expect(jsonData.bookingdates.checkout).to.match(/^\\d{4}-\\d{2}-\\d{2}$/)",
+              "});",
+              "",
+              "(pm.response.json().additionalneeds === undefined ? pm.test.skip : pm.test)('Customer has additional needs', () => {",
+              "        pm.expect(pm.response.json().additionalneeds).to.be.a('string')",
+              "});",
+              "}",
+              "",
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Create a new booking",
+      "item": [
+        {
+          "name": "Create a new booking with JSON",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "8ed74619-c7b6-4dd2-ad4c-49f227fcb709",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "0f49f12c-1346-4816-ba05-f221d8e06afd",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  "pm.collectionVariables.unset(\"variable_key\");",
+                  "",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "512f99fb-9d31-4754-8575-69abe82d52b1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstname\" : \"Sally\",\r\n\t\"lastname\" : \"Brown\",\r\n\t\"totalprice\" : 111,\r\n\t\"depositpaid\" : true,\r\n\t\"additionalneeds\" : \"Breakfast\",\r\n\t\"bookingdates\" : {\r\n\t\t\"checkin\" : \"2013-02-23\",\r\n\t\t\"checkout\" : \"2014-10-23\"\r\n\t}\r\n}",
+              "options": {}
+            },
+            "url": "{{baseURL}}/booking"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a new booking with XML",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "1dbbdfda-21d3-4a77-99e4-2fbd9b459087",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "72e35ccd-5920-4f58-a871-a7f06f456138",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_id": "ae2947bb-04c7-4525-aad3-60314d47941b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<booking>\r\n    <firstname>Sally</firstname>\r\n    <lastname>Brown</lastname>\r\n    <totalprice>111</totalprice>\r\n    <depositpaid>true</depositpaid>\r\n    <additionalneeds>Breakfast</additionalneeds>\r\n    <bookingdates>\r\n        <checkin>2013/02/23</checkin>\r\n        <checkout>2014/10/23</checkout>\r\n    </bookingdates>\r\n</booking>",
+              "options": {}
+            },
+            "url": "{{baseURL}}/booking"
+          },
+          "response": []
+        },
+        {
+          "name": "Dynamically create a new booking with JSON",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "810f7571-e524-4697-bdc7-453c5a2dec5f",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.sendRequest(\"https://randomuser.me/api/\", (err, res) => {",
+                  "    var firstname = res.json().results[0].name.first",
+                  "    var lastname  = res.json().results[0].name.last",
+                  "    pm.environment.set(\"first_name\", JSON.stringify((_.capitalize(firstname))))",
+                  "    pm.environment.set(\"last_name\", JSON.stringify((_.capitalize(lastname))))",
+                  "})",
+                  "",
+                  "pm.environment.set(\"total_price\", _.random(0, 1000))",
+                  "",
+                  "const depositPaid = [true, false]",
+                  "pm.environment.set(\"depositPaid\", _.shuffle(depositPaid)[0])",
+                  "",
+                  "const moment = require('moment')",
+                  "pm.environment.set(\"check_in\", JSON.stringify(moment().format('YYYY-MM-DD')))",
+                  "pm.environment.set(\"check_out\", JSON.stringify(moment().add(_.random(1, 14), 'days').format('YYYY-MM-DD')))",
+                  "",
+                  "const items = [\"None\", \"Breakfast\", \"Lunch\", \"Dinner\", \"Late Checkout\", \"Newspaper\", \"Extra Pillow\"]",
+                  "pm.environment.set(\"additional_needs\", JSON.stringify(_.shuffle(items)[0]))"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b19878ec-dc3e-4ee6-962f-6931326479ef",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  "",
+                  "function cleanup() {",
+                  "    const clean = ['first_name', 'last_name', 'total_price', 'depositPaid', 'check_in', 'check_out', 'additional_needs']",
+                  "    for(let i = 0; i < clean.length; ++i){",
+                  "        pm.environment.unset(clean[i])",
+                  "    }",
+                  "}",
+                  "cleanup()",
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_id": "a5814b11-289a-4054-8cc1-a265085a0914",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"firstname\" : {{first_name}},\r\n\t\"lastname\" : {{last_name}},\r\n\t\"totalprice\" : {{total_price}},\r\n\t\"depositpaid\" : {{depositPaid}},\r\n\t\"additionalneeds\" : {{additional_needs}},\r\n\t\"bookingdates\" : {\r\n\t\t\"checkin\" : {{check_in}},\r\n\t\t\"checkout\" : {{check_out}}\r\n\t}\r\n}",
+              "options": {}
+            },
+            "url": "{{baseURL}}/booking"
+          },
+          "response": []
+        },
+        {
+          "name": "Dynamically create a new booking with XML",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "72790998-20e1-4f53-90f7-b416c8a254d8",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.sendRequest(\"https://randomuser.me/api/\", (err, res) => {",
+                  "    var firstname = res.json().results[0].name.first",
+                  "    var lastname  = res.json().results[0].name.last",
+                  "    pm.environment.set(\"first_name\", JSON.stringify((_.capitalize(firstname))))",
+                  "    pm.environment.set(\"last_name\", JSON.stringify((_.capitalize(lastname))))",
+                  "})",
+                  "",
+                  "pm.environment.set(\"total_price\", _.random(0, 1000))",
+                  "",
+                  "const depositPaid = [true, false]",
+                  "pm.environment.set(\"depositPaid\", _.shuffle(depositPaid)[0])",
+                  "",
+                  "const moment = require('moment')",
+                  "pm.environment.set(\"check_in\", JSON.stringify(moment().format('YYYY-MM-DD')))",
+                  "pm.environment.set(\"check_out\", JSON.stringify(moment().add(_.random(1, 14), 'days').format('YYYY-MM-DD')))",
+                  "",
+                  "const items = [\"None\", \"Breakfast\", \"Lunch\", \"Dinner\", \"Late Checkout\", \"Newspaper\", \"Extra Pillow\"]",
+                  "pm.environment.set(\"additional_needs\", JSON.stringify(_.shuffle(items)[0]))"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "f277d77b-0c4c-4a80-b8c1-e71ead79195f",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+                  "",
+                  "function cleanup() {",
+                  "    const clean = ['first_name', 'last_name', 'total_price', 'depositPaid', 'check_in', 'check_out', 'additional_needs']",
+                  "    for(let i = 0; i < clean.length; ++i){",
+                  "        pm.environment.unset(clean[i])",
+                  "    }",
+                  "}",
+                  "cleanup()",
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_id": "9ee374e4-002b-4e07-9652-1f3bce7e92e6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<booking>\r\n    <firstname>{{first_name}}</firstname>\r\n    <lastname>{{last_name}}</lastname>\r\n    <totalprice>{{total_price}}</totalprice>\r\n    <depositpaid>{{depositPaid}}</depositpaid>\r\n    <additionalneeds>{{additional_needs}}</additionalneeds>\r\n    <bookingdates>\r\n        <checkin>{{check_in}}</checkin>\r\n        <checkout>{{check_out}}</checkout>\r\n    </bookingdates>\r\n</booking>",
+              "options": {}
+            },
+            "url": "{{baseURL}}/booking"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "0b4e7795-88eb-4fde-9b45-221e13a8df27"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "135c87cf-5257-46ea-b204-1a3b1ca737e1",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "5db49465-bf63-45d5-b92b-66ff115d94c7",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
